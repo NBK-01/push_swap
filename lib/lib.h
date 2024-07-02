@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 11:32:10 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/02 15:28:20 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/02 18:32:57 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 {
 	int				content;
 	struct s_list		*next;
+	struct s_list		*prev;
 }	t_list;
 
 char	*get_next_line(int fd);
