@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 17:23:58 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/02 15:28:33 by nkanaan          ###   ########.fr       */
+/*   Created: 2024/06/14 11:36:11 by nkanaan           #+#    #+#             */
+/*   Updated: 2024/07/02 13:58:36 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib.h"
 
-long	ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	long	result;
-	int	sign;
+	t_list	*end;
 
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	if (lst == NULL)
+		return ;
+	while (*lst == NULL)
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		*lst = new;
+		return ;
 	}
-	return (sign * result);
+	end = ft_lstlast(*lst);
+	end->next = new;
 }

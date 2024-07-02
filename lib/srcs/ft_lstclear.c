@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 17:23:58 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/02 15:28:33 by nkanaan          ###   ########.fr       */
+/*   Created: 2024/06/24 10:10:21 by nkanaan           #+#    #+#             */
+/*   Updated: 2024/07/02 14:04:02 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib.h"
 
-long	ft_atoi(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(int))
 {
-	long	result;
-	int	sign;
+	t_list	*tmp;
 
-	result = 0;
-	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	if (!(*lst) || !lst || !del)
+		return ;
+	while (*lst)
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		tmp = (*lst)->next;
+		ft_lstdelone(*(lst), del);
+		(*lst) = tmp;
 	}
-	return (sign * result);
 }
