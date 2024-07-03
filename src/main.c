@@ -31,7 +31,7 @@ int	main(int ac, char *av[])
 	t_list	*stack;
 	t_list	*current;
 
-	i = 0;
+	i = 1;
 	stack = NULL;
 	current = NULL;
 	if (ac == 1)
@@ -40,7 +40,7 @@ int	main(int ac, char *av[])
 		av = ft_split(av[1], ' ');
 	while (av[i])
 	{
-		if ((ft_parse_args(av[i])) == 1)
+		if ((ft_parse_args(av[i])))
 			return (ft_printf("digit error\n"));
 		else
 		{
