@@ -15,7 +15,10 @@
 
 /* Bucket sort in BUCKET A / STACK A */
 
-void	ft_bucket_a();
+void	ft_bucket_a()
+{
+
+}
 
 
 /* Bucket two sort in B move to A */

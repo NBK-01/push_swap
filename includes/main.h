@@ -18,14 +18,15 @@
 
 typedef struct	s_node
 {
-	int	nbr;
-	int	index;
+  int k_sort;
+  int nbr;
+  struct  s_node *next;
 }	t_node;
 
 typedef struct	s_stack
 {
-	t_node	*content;
-	t_node	*next;
+	t_node	*head;
+	t_node	*tail;
 }	t_stack;
 
 

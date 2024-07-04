@@ -25,3 +25,13 @@ void 	moves_to_head();
 /* Get moves to bottom */
 
 void	moves_to_tail();
+
+/* Get maximum/highest value node */
+
+void  ft_max();
+
+/* Get minimum/lowest value node */
+
+void  ft_min();
+
+
