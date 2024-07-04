@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 15:14:08 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 10:00:42 by nkanaan          ###   ########.fr       */
+/*   Created: 2024/07/04 09:21:47 by nkanaan           #+#    #+#             */
+/*   Updated: 2024/07/04 09:34:25 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
-
-# include "../lib/lib.h"
-# include <limits.h>
-
-typedef struct	s_node
-{
-	int	nbr;
-	int	index;
-}	t_node;
-
-typedef struct	s_stack
-{
-	t_node	*content;
-	t_node	*next;
-}	t_stack;
+#include "../includes/main.h"
 
 
-// Error checking
-int	ft_parse_args(char *str);
+/* Mini sort */
 
+void	ft_mini_sort();
 
-#endif
+/* Sort three */
+
+void	ft_three_sort();
+
+/* Sort med */
+
+void	ft_med_sort();
+
+/* Main sort */
+
+void	ft_sort();

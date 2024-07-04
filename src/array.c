@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   array.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 15:14:08 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 10:00:42 by nkanaan          ###   ########.fr       */
+/*   Created: 2024/07/04 09:22:21 by nkanaan           #+#    #+#             */
+/*   Updated: 2024/07/04 09:29:29 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "../includes/main.h"
 
-# include "../lib/lib.h"
-# include <limits.h>
+/* Get array size */
+void	arr_size(long *arr);
 
-typedef struct	s_node
-{
-	int	nbr;
-	int	index;
-}	t_node;
-
-typedef struct	s_stack
-{
-	t_node	*content;
-	t_node	*next;
-}	t_stack;
+/* Pre-sorting array using merge sort*/
+void	ft_merge(long	*arr, int right, int left, int size);
 
 
-// Error checking
-int	ft_parse_args(char *str);
+void	ft_merge_sort(long *arr, int right, int left);
 
-
-#endif

@@ -1,36 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/26 15:14:08 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 10:00:42 by nkanaan          ###   ########.fr       */
+/*   Created: 2024/07/04 09:20:16 by nkanaan           #+#    #+#             */
+/*   Updated: 2024/07/04 09:20:16 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
-
-# include "../lib/lib.h"
-# include <limits.h>
-
-typedef struct	s_node
-{
-	int	nbr;
-	int	index;
-}	t_node;
-
-typedef struct	s_stack
-{
-	t_node	*content;
-	t_node	*next;
-}	t_stack;
-
-
-// Error checking
-int	ft_parse_args(char *str);
-
-
-#endif
+#include "../includes/main.h"
