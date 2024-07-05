@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 13:20:49 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/05 13:56:20 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/05 15:33:25 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int	main(int ac, char *av[])
 	long	j;
 	t_list	*stack_a;
 
-	i = 1;
+	/* temporary dirty fix -- for string || multi arg input */
+	if (ac == 2)
+		i = 0;
+	else
+		i = 1;
 	stack_a = NULL;
 	if (ac == 1)
 		exit(1);
@@ -26,9 +30,8 @@ int	main(int ac, char *av[])
 		av = ft_split(av[1], ' ');
 	while (av[i])
 	{
-		ft_parse_args(av[i], stack_a);
+		ft_parse_args(av[i], &stack_a);
 		i++;
-	}	
-	// INIT STACK -> Free array -> free stacks
-
+	}
+	print_stack(stack_a);
 }

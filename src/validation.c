@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:12:21 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/05 13:56:00 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/05 15:33:17 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.h"
 
-void	ft_parse_args(char *av, t_list	*a)
+void	ft_parse_args(char *av, t_list	**a)
 {
 	int	i;
 	int	nbr;
@@ -24,7 +24,7 @@ void	ft_parse_args(char *av, t_list	*a)
 		exit(1);
 	}
 	nbr = ft_atoi(av);
-	create_stack(nbr, &a);
+	create_stack(nbr, a);
 }
 
 int	is_valid(char *str)
@@ -42,8 +42,6 @@ int	is_valid(char *str)
 	}
 	return (0);
 }
-
-/* Full frees for array, stack, etc.. */
 
 void	ft_free_stack();
 
