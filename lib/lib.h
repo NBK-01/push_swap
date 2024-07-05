@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 11:32:10 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/02 18:32:57 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/05 13:48:36 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -23,9 +24,9 @@
 
 typedef struct s_list
 {
-	int				content;
+	int			content;
+	int			index;
 	struct s_list		*next;
-	struct s_list		*prev;
 }	t_list;
 
 char	*get_next_line(int fd);

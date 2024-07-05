@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/04 09:34:31 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 09:35:33 by nkanaan          ###   ########.fr       */
+/*   Created: 2024/07/04 09:21:47 by nkanaan           #+#    #+#             */
+/*   Updated: 2024/07/04 09:34:25 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.h"
 
 
-/* Bucket sort in BUCKET A / STACK A */
+/* Mini sort */
 
-void	ft_bucket_a()
-{
+void	ft_mini_sort();
 
-}
+/* Sort three */
 
+void	ft_three_sort();
 
-/* Bucket two sort in B move to A */
+/* Sort med */
 
-void	ft_bucket_b();
+void	ft_med_sort();
+
+/* Main sort */
+
+void	ft_sort();

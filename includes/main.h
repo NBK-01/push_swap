@@ -6,7 +6,7 @@
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:14:08 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 10:00:42 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/05 13:59:29 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,20 @@
 # include "../lib/lib.h"
 # include <limits.h>
 
-typedef struct	s_node
-{
-  int k_sort;
-  int nbr;
-  struct  s_node *next;
-}	t_node;
+// Error checking / parsing
+void	ft_parse_args(char *av, t_list *stack);
+int	is_valid(char *str);
+// int	is_dup(char *str);
 
-typedef struct	s_stack
-{
-	t_node	*head;
-	t_node	*tail;
-}	t_stack;
+// Stack stuff
+void	create_stack(int nbr, t_list **stack);
+void	print_stack(t_list *stack);
+
+// Memory allocation -> error messages -> frees
+
+// Sorting
 
 
-// Error checking
-int	ft_parse_args(char *str);
-
+// Operations
 
 #endif

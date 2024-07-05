@@ -10,7 +10,7 @@ CC = gcc
 
 CFLAGS = -Werror -Wall -Wextra -I $(HEADER) #-fsanitize=address
 
-SRCS = main errors
+SRCS = main validation sort stack cmds/push
 
 SRC = $(addprefix src/, $(addsuffix .c, $(SRCS)))
 

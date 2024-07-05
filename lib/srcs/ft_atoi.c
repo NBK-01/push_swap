@@ -6,12 +6,12 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:23:58 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/02 15:28:33 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/05 10:44:29 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib.h"
-
+#include <stdio.h>
 long	ft_atoi(const char *str)
 {
 	long	result;
@@ -27,8 +27,14 @@ long	ft_atoi(const char *str)
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		result = result * 10 + *str - '0';
+		result = result * 10 + (*str - '0');
 		str++;
 	}
-	return (sign * result);
+	if ((result * sign) < -2147483648 || (result * sign) > 2147483647)
+	{
+		ft_printf("%s\n", "max/min error");
+		exit(1);
+	}
+	else 
+		return (sign * result);
 }
