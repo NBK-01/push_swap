@@ -10,7 +10,7 @@ CC = gcc
 
 CFLAGS = -Werror -Wall -Wextra -I $(HEADER) #-fsanitize=address
 
-SRCS = main validation sort stack cmds/push
+SRCS = main validation sort stack cmds/push cmds/swap cmds/rotate cmds/rev_rotate
 
 SRC = $(addprefix src/, $(addsuffix .c, $(SRCS)))
 
@@ -40,8 +40,6 @@ header:
 ifeq ($(shell test -e ./proj && test -d objs/ && echo -n yes), yes)
 	@echo "nothing to be done for: all"
 else
-	@printf "%b" "$(OBJ_COLOR)Author:	$(WARN_COLOR)$(AUTHOR)\n"
-	@printf "%b" "$(OBJ_COLOR)CC: 	$(WARN_COLOR)$(CC)\n\033[m"
 	@printf "%b" "$(OBJ_COLOR)Flags: 	$(WARN_COLOR)$(CFLAGS)\n\033[m"
 	@echo
 endif
@@ -49,10 +47,10 @@ endif
 
 objs/%.o:	src/%.c
 			@mkdir -p $(dir $@)
-			${CC} ${FLAGS} -c $< -o $@
+			@${CC} ${FLAGS} -c $< -o $@
 
 $(NAME):	$(OBJS) $(LIBFT) $(HEADER)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
+			@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT)
 			@printf "%-53b%b" "$(COM_COLOR)Project Compiled:" "$(OK_COLOR)[✓]$(NO_COLOR)\n"
 
 $(LIBFT):
