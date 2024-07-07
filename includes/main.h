@@ -30,10 +30,14 @@ void  init_sort(t_list **stack_a);
 // Memory allocation -> error messages -> frees
 
 // Sorting
-
+void  ft_sort_three(t_list **stack);
 
 // Operations
 void  swap(t_list **stack);
 void  swap_a(t_list **stack);
 void  swap_b(t_list **stack);
+void  rotate(t_list **stack);
+void  rotate_a(t_list **stack);
+void  rev_rotate(t_list **stack);
+void  rev_rotate_a(t_list **stack);
 #endif

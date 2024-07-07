@@ -38,3 +38,10 @@ void  swap_b(t_list **stack)
   swap(stack);
   ft_printf("sb\n");
 }
+
+void  swap_both(t_list **stack_a, t_list **stack_b)
+{
+  swap_a(stack_a);
+  swap_b(stack_b);
+  ft_printf("ss\n");
+}

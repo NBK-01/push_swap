@@ -11,3 +11,32 @@
 /* ************************************************************************** */
 
 #include "../../includes/main.h"
+
+void  rev_rotate(t_list **stack)
+{
+  t_list  *head;
+  t_list  *tail;
+
+  head = (*stack);
+  tail = ft_lstlast((head));
+
+  while (head != NULL)
+  {
+    if (head->next->next == NULL)
+    {
+      head->next = NULL;
+      break ;
+    }
+    head = head->next;
+  }
+  tail->next = (*stack);
+  (*stack) = tail;
+}
+
+void  rev_rotate_a(t_list **stack)
+{
+  rev_rotate(stack);
+  ft_printf("rra\n");
+}
+
+

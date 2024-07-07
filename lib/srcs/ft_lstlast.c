@@ -14,13 +14,16 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
+  t_list  *temp;
+
+  temp = lst;
+	if (!temp)
 		return (NULL);
-	while (lst->next != NULL)
+	while (temp->next != NULL)
 	{
-		lst = lst->next;
+		temp = temp->next;
 	}
-	return (lst);
+	return (temp);
 }
 // #include <stdio.h>
 // int main() {

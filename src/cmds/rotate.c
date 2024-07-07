@@ -11,3 +11,23 @@
 /* ************************************************************************** */
 
 #include "../../includes/main.h"
+
+
+void  rotate(t_list **stack)
+{
+  t_list  *head;
+  t_list  *tail;
+
+  head = (*stack);
+  tail = ft_lstlast((head));
+
+  (*stack) = head->next;
+  head->next = NULL;
+  tail->next = head;
+}
+
+void  rotate_a(t_list **stack)
+{
+  rotate(stack);
+  ft_printf("ra\n");
+}
