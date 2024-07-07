@@ -39,8 +39,7 @@ void  init_sort(t_list **stack_a)
   if (ft_lstsize((*stack_a)) == 2)
     swap_a(stack_a);
   if (ft_lstsize((*stack_a)) == 3)
-      ft_printf("Size is 3\n");
-    // Conditions to get 1 - 2 moves to sort 
+    ft_sort_three(stack_a);
   if (ft_lstsize((*stack_a)) == 5)
       ft_printf("Size is 5\n");
     // Push 2 to b and sort for three then push back to a

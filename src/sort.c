@@ -12,11 +12,34 @@
 
 #include "../includes/main.h"
 
+void	ft_sort_three(t_list **stack)
+{
+  t_list  *tail;
+  t_list  *head;
+  t_list  *mid;
 
+  head = *stack;
+  mid = head->next;
+  tail = ft_lstlast(*stack);
 
-void	ft_mini_sort(t_list **stack);
+  if ((head->content > mid->content) && (head->content < tail->content))
+    swap_a(stack);
+  else if ((head->content > mid->content) && (mid->content > tail->content))
+  {
+    swap_a(stack);
+    rev_rotate_a(stack);
+  }
+  else if ((head->content > mid->content) && (mid->content < tail->content))
+    rotate_a(stack);
+  else if ((head->content < mid->content) && (head->content < tail->content))
+  {
+    swap_a(stack);
+    rotate_a(stack);
+  }
+  else if ((head->content < mid->content) && (head->content > tail->content))
+    rev_rotate_a(stack);
 
-void	ft_three_sort();
+}
 
 
 void	ft_med_sort();
