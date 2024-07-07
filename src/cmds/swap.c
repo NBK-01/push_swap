@@ -13,3 +13,28 @@
 
 #include "../../includes/main.h"
 
+
+void  swap(t_list **stack)
+{
+  int value;
+  t_list  *temp;
+  t_list  *next;
+
+  temp = (*stack);
+  next = temp->next;
+  value = temp->content;
+  temp->content = next->content;
+  next->content = value;
+}
+
+void  swap_a(t_list **stack)
+{
+  swap(stack);
+  ft_printf("sa\n");
+}
+
+void  swap_b(t_list **stack)
+{
+  swap(stack);
+  ft_printf("sb\n");
+}

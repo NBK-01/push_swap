@@ -36,7 +36,13 @@ void	init_stack(int nbr, t_list **stack)
 
 void  init_sort(t_list **stack_a)
 {
-  (void)stack_a;
-  ft_printf("IN SORT FUNC, stack not sorted\n");
+  if (ft_lstsize((*stack_a)) == 2)
+    swap_a(stack_a);
+  if (ft_lstsize((*stack_a)) == 3)
+      ft_printf("Size is 3\n");
+    // Conditions to get 1 - 2 moves to sort 
+  if (ft_lstsize((*stack_a)) == 5)
+      ft_printf("Size is 5\n");
+    // Push 2 to b and sort for three then push back to a
 }
 

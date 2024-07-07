@@ -13,18 +13,13 @@
 #include "../includes/main.h"
 
 
-/* Mini sort */
 
-void	ft_mini_sort();
-
-/* Sort three */
+void	ft_mini_sort(t_list **stack);
 
 void	ft_three_sort();
 
-/* Sort med */
 
 void	ft_med_sort();
 
-/* Main sort */
 
 void	ft_sort();

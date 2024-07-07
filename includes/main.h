@@ -33,5 +33,7 @@ void  init_sort(t_list **stack_a);
 
 
 // Operations
-
+void  swap(t_list **stack);
+void  swap_a(t_list **stack);
+void  swap_b(t_list **stack);
 #endif
