@@ -13,14 +13,16 @@
 #include "../includes/main.h"
 
 // Creat Initial stack A
-void	create_stack(int nbr, t_list **stack)
+
+
+/* Utility fucntion to create an empty stack */
+void  create_stack(t_list **stack)
 {
-	t_list	*new;
-	
-	new = ft_lstnew(nbr);
-	ft_lstadd_back(stack, new);
-	//print_stack((*stack))
+  t_list  *new;
+  new = NULL;
+  ft_lstadd_back(stack, new);
 }
+
 
 /* Utility function to print stacks */
 void	print_stack(t_list *stack)

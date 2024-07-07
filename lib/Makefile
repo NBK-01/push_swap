@@ -60,8 +60,8 @@ ${NAME}: ${L_OBJS} ${P_OBJS} ${G_OBJS}
 all: ${NAME}
 
 clean:
-	${RM} ${P_OBJS} ${L_OBJS} rm -rf objs/
-	@printf "%-53b%b" "$(COM_COLOR)Cleaning object files:" "$(WARN_COLOR)[....]$(NO_COLOR)\n"
+			@rm -rf objs/ ${RM} ${P_OBJS} ${L_OBJS}
+			@printf "%-53b%b" "$(COM_COLOR)Cleaning object files:" "$(WARN_COLOR)[....]$(NO_COLOR)\n"
 
 fclean: clean
 	${RM} ${NAME}

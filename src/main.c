@@ -12,26 +12,22 @@
 
 #include "../includes/main.h"
 
+/* Init empty stack and send all arguments to validate then initialize 
+         * stack then check if stack is sorted (if not -> start sorting) */
 int	main(int ac, char *av[])
 {
-	int	i;
-	long	j;
-	t_list	*stack_a;
-
-	/* temporary dirty fix -- for string || multi arg input */
-	if (ac == 2)
-		i = 0;
-	else
-		i = 1;
-	stack_a = NULL;
-	if (ac == 1)
-		exit(1);
-	if (ac == 2)
-		av = ft_split(av[1], ' ');
-	while (av[i])
-	{
-		ft_parse_args(av[i], &stack_a);
-		i++;
-	}
-	print_stack(stack_a);
+  t_list *stack_a;
+  
+  stack_a = NULL;
+  if (ac < 2)
+    exit (1);
+  else
+  {
+    init_push_swap(av, &stack_a, ac);
+    if (!is_sorted(&stack_a))
+      exit(1);
+    else
+      init_sort(&stack_a);
+  }
+  print_stack((stack_a));
 }

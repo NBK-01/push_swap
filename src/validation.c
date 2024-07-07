@@ -12,22 +12,7 @@
 
 #include "../includes/main.h"
 
-void	ft_parse_args(char *av, t_list	**a)
-{
-	int	i;
-	int	nbr;
-
-	i = 1;
-	if ((is_valid(av)) == 1)
-	{
-		(ft_printf("digit error\n"));
-		exit(1);
-	}
-	nbr = ft_atoi(av);
-	create_stack(nbr, a);
-}
-
-int	is_valid(char *str)
+int	is_num(char *str)
 {
 	int	i;
 
@@ -43,8 +28,31 @@ int	is_valid(char *str)
 	return (0);
 }
 
-void	ft_free_stack();
+/* Check for duplicates during validation */
+int is_dup(char **arg, int nbr, int i)
+{
+  i++; 
+  while (arg[i])
+	{
+		if (ft_atoi(arg[i]) == nbr)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
-void	ft_free_array();
+/* Check if stack a is sorted using temp value */
+int is_sorted(t_list **a)
+{
+  t_list  *temp;
 
-void	ft_free_all();
+  temp = (*a);
+  while (temp && temp->next)
+  {
+    // ft_printf("TEMP: %d", temp->content);
+    if (temp->content > temp->next->content)
+      return (1);
+    temp = temp->next;
+  }
+  return (0);
+}

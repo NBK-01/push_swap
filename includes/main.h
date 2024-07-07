@@ -17,13 +17,16 @@
 # include <limits.h>
 
 // Error checking / parsing
-void	ft_parse_args(char *av, t_list **stack);
-int	is_valid(char *str);
-
+void init_push_swap(char **av, t_list	**a, int  ac);
+// int is_valid(char *arg)
+int  is_num(char *str);
+int  is_dup(char **arg, int nbr, int i);
+int  is_sorted(t_list **a);
 // Stack stuff
-void	create_stack(int nbr, t_list **stack);
+void	init_stack(int nbr, t_list **stack);
 void	print_stack(t_list *stack);
-
+void  create_stack(t_list **stack);
+void  init_sort(t_list **stack_a);
 // Memory allocation -> error messages -> frees
 
 // Sorting

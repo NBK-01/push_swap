@@ -10,7 +10,7 @@ CC = gcc
 
 CFLAGS = -Werror -Wall -Wextra -I $(HEADER) #-fsanitize=address
 
-SRCS = main validation sort stack cmds/push cmds/swap cmds/rotate cmds/rev_rotate
+SRCS = main validation sort stack push_swap cmds/push cmds/swap cmds/rotate cmds/rev_rotate
 
 SRC = $(addprefix src/, $(addsuffix .c, $(SRCS)))
 
@@ -59,7 +59,7 @@ $(LIBFT):
 
 
 clean:
-			rm -rf $(OBJS) ./objs
+			rm -rf objs/
 			@make clean -C ./lib
 			@printf "%-53b%b" "$(COM_COLOR)OBJECT FILES DELETED:" "$(ERROR_COLOR)[✓]$(NO_COLOR)\n"
 
