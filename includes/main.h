@@ -25,12 +25,14 @@ int  is_sorted(t_list **a);
 // Stack stuff
 void	init_stack(int nbr, t_list **stack);
 void	print_stack(t_list *stack);
+void  print_two_stacks(t_list  *stack_a, t_list *stack_b);
 void  create_stack(t_list **stack);
-void  init_sort(t_list **stack_a);
+void  init_sort(t_list **stack_a, t_list **stack_b);
 // Memory allocation -> error messages -> frees
 
 // Sorting
 void  ft_sort_three(t_list **stack);
+void  ft_sort_mid(t_list **stack_a, t_list **stack_b);
 
 // Operations
 void  swap(t_list **stack);
@@ -40,4 +42,7 @@ void  rotate(t_list **stack);
 void  rotate_a(t_list **stack);
 void  rev_rotate(t_list **stack);
 void  rev_rotate_a(t_list **stack);
+void  push(t_list **src, t_list **dest);
+void  push_a_to_b(t_list **stack_a, t_list **stack_b);
+void  push_b_to_a(t_list **stack_a, t_list **stack_b);
 #endif

@@ -34,14 +34,14 @@ void	init_stack(int nbr, t_list **stack)
 }
 
 
-void  init_sort(t_list **stack_a)
+void  init_sort(t_list **stack_a, t_list **stack_b)
 {
   if (ft_lstsize((*stack_a)) == 2)
     swap_a(stack_a);
   if (ft_lstsize((*stack_a)) == 3)
     ft_sort_three(stack_a);
   if (ft_lstsize((*stack_a)) == 5)
-      ft_printf("Size is 5\n");
+    ft_sort_mid(stack_a, stack_b);
     // Push 2 to b and sort for three then push back to a
 }
 

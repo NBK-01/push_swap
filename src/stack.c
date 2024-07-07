@@ -33,3 +33,21 @@ void	print_stack(t_list *stack)
 		stack = stack->next;
 	}
 }
+
+
+void  print_two_stacks(t_list *stack_a, t_list *stack_b)
+{
+  ft_printf("STACK A:\n");
+  while (stack_a)
+  {
+    ft_printf("%d\n", stack_a->content);
+    stack_a = stack_a->next;
+  }
+
+  ft_printf("STACK B:\n");
+  while (stack_b)
+  {
+    ft_printf("%d\n", stack_b->content);
+    stack_b = stack_b->next;
+  }
+}

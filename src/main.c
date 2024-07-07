@@ -17,8 +17,10 @@
 int	main(int ac, char *av[])
 {
   t_list *stack_a;
+  t_list *stack_b;
   
   stack_a = NULL;
+  stack_b = NULL;
   if (ac < 2)
     exit (1);
   else
@@ -27,7 +29,7 @@ int	main(int ac, char *av[])
     if (!is_sorted(&stack_a))
       exit(1);
     else
-      init_sort(&stack_a);
+      init_sort(&stack_a, &stack_b);
   }
   print_stack((stack_a));
 }
