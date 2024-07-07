@@ -12,6 +12,7 @@
 
 #include "../includes/main.h"
 
+/* Check is syntax is valid and meets reqs during validation */
 int	is_num(char *str)
 {
 	int	i;
