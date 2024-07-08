@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 09:34:31 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 14:34:33 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 15:13:10 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	print_stack(t_list *stack)
 	}
 }
 
+/* Utility functio to reset index back to OG values after altering a stack
+ * used in sort five func only */
 void	reset_index(t_list *stack)
 {
 	int	i;
@@ -35,12 +37,13 @@ void	reset_index(t_list *stack)
 	}
 }
 
-
+/* Util function to get the index value of the minimum node in the stack
+ * used to know the position of the node to be able to move it accordingly */
 int	find_min(t_list	**stack)
 {
 	t_list	*temp;
-	int	min;
-	int	index;
+	int		min;
+	int		index;
 
 	temp = (*stack);
 	min = INT_MAX;
@@ -55,4 +58,3 @@ int	find_min(t_list	**stack)
 	}
 	return (index);
 }
-
