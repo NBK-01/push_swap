@@ -40,8 +40,6 @@ void	ft_sort_three(t_list **stack)
 	}
 	if ((head->content < mid->content) && (head->content > tail->content))
 		rev_rotate_a(stack);
-	else
-		return ;
 }
 
 /* Getting the index of the minimum value node and moves applying 
@@ -64,7 +62,8 @@ void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 	if (min_index == 3)
 		rev_rotate_a(stack_a);
 	push_a_to_b(stack_a, stack_b);
-	ft_sort_three(stack_a);
+  if (!is_sorted(stack_a))
+    ft_sort_three(stack_a);
 	push_b_to_a(stack_a, stack_b);
 }
 
@@ -94,10 +93,53 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 	ft_sort_four(stack_a, stack_b);
 	push_b_to_a(stack_a, stack_b);
 }
-
+/*
 void	ft_sort_mid(t_list **stack_a, t_list **stack_b)
 {
+	int		i;
+	int		count;
+  int   size;
 
-	(void)stack_b;
-	bubble_sort(stack_a);
+  size = ft_lstsize(*stack_a);
+	count = 0;
+		while (count++ < size)
+		{
+			if ((*stack_a)->content >> count == 1)
+        rotate_a(stack_a);
+			else
+        push_a_to_b(stack_a, stack_b);
+		}
+		while (stack_b != NULL)
+      push_b_to_a(stack_a, stack_b);
+    if (!is_sorted(stack_a))
+        ft_sort_mid(stack_a, stack_b);
+} */
+
+void	ft_sort_mid(t_list **stack_a, t_list **stack_b, int bit_pos, int size)
+{
+	int	count;
+
+	if (bit_pos >= (sizeof(int) * 8) || is_sorted(stack_a))
+		return;
+
+	count = 0;
+	while (count < size)
+	{
+		if (((*stack_a)->content >> bit_pos) & 1)
+		{
+			rotate_a(stack_a);
+		}
+		else
+		{
+			push_a_to_b(stack_a, stack_b);
+		}
+		count++;
+	}
+
+	while (*stack_b != NULL)
+	{
+		push_b_to_a(stack_a, stack_b);
+	}
+
+	ft_sort_mid(stack_a, stack_b, bit_pos + 1, size);
 }

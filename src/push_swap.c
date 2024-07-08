@@ -68,6 +68,6 @@ void	init_sort(t_list **stack_a, t_list **stack_b)
 		ft_sort_four(stack_a, stack_b);
 	if (ft_lstsize((*stack_a)) == 5)
 		ft_sort_five(stack_a, stack_b);
-	if (ft_lstsize((*stack_a)) > 5 && ft_lstsize((*stack_a)) < 500)
-		ft_sort_mid(stack_a, stack_b);
+	if (ft_lstsize((*stack_a)) > 5)
+		ft_sort_mid(stack_a, stack_b, 0, ft_lstsize((*stack_a)));
 }

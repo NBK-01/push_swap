@@ -32,7 +32,8 @@ void	del(int content);
 void	ft_sort_three(t_list **stack);
 void	ft_sort_four(t_list **stack_a, t_list **stack_b);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
-void	ft_sort_mid(t_list **stack_a, t_list **stack_b);
+void	ft_sort_mid(t_list **stack_a, t_list **stack_b, int bit_pos, int size);
+//void	ft_sort_mid(t_list **stack_a, t_list **stack_b);
 void	bubble_sort(t_list **stack);
 /*Operations*/
 void	swap(t_list **stack);
