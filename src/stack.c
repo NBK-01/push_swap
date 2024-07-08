@@ -6,48 +6,53 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 09:34:31 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/05 15:34:32 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 14:34:33 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.h"
-
-// Creat Initial stack A
-
-
-/* Utility fucntion to create an empty stack */
-void  create_stack(t_list **stack)
-{
-  t_list  *new;
-  new = NULL;
-  ft_lstadd_back(stack, new);
-}
-
 
 /* Utility function to print stacks */
 void	print_stack(t_list *stack)
 {
 	while (stack)
 	{
-		ft_printf("%d\n", stack->content);
+		ft_printf("%d->%d\n", stack->index, stack->content);
 		stack = stack->next;
 	}
 }
 
-
-void  print_two_stacks(t_list *stack_a, t_list *stack_b)
+void	reset_index(t_list *stack)
 {
-  ft_printf("STACK A:\n");
-  while (stack_a)
-  {
-    ft_printf("%d\n", stack_a->content);
-    stack_a = stack_a->next;
-  }
+	int	i;
 
-  ft_printf("STACK B:\n");
-  while (stack_b)
-  {
-    ft_printf("%d\n", stack_b->content);
-    stack_b = stack_b->next;
-  }
+	i = 0;
+	while (stack)
+	{
+		(stack)->index = i;
+		(stack) = stack->next;
+		i++;
+	}
 }
+
+
+int	find_min(t_list	**stack)
+{
+	t_list	*temp;
+	int	min;
+	int	index;
+
+	temp = (*stack);
+	min = INT_MAX;
+	while (temp != NULL)
+	{
+		if (temp->content < min)
+		{
+			min = temp->content;
+			index = temp->index;
+		}
+		temp = temp->next;
+	}
+	return (index);
+}
+

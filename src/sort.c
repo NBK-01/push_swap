@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 09:21:47 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/04 09:34:25 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 14:49:51 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,47 @@ void	ft_sort_three(t_list **stack)
     rev_rotate_a(stack);
 }
 
-void	ft_sort_mid(t_list **stack_a, t_list **stack_b)
+void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 {
-  //t_list  *tail;
-  //t_list  *head;
-
-  //head = (*stack_a);
- // tail = ft_lstlast(*stack_a);
-  push_a_to_b(stack_a, stack_b);
-  push_a_to_b(stack_a, stack_b);
-  ft_sort_three(stack_a);
-  push_b_to_a(stack_a, stack_b);
-  rotate_a(stack_a);
-  push_b_to_a(stack_a, stack_b);
+	int	min_index;
+	
+	min_index = find_min(stack_a);
+	if (min_index == 1)
+		swap_a(stack_a);
+	if (min_index == 2)
+	{
+		rotate_a(stack_a);
+		swap_a(stack_a);
+	}
+	if (min_index == 3)
+		rev_rotate_a(stack_a);
+	push_a_to_b(stack_a, stack_b);
+	ft_sort_three(stack_a);
+	push_b_to_a(stack_a, stack_b);
 }
 
-void	ft_sort();
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+	int	min_index;
+
+	min_index = find_min(stack_a);
+	if (min_index == 1)
+		swap_a(stack_a);
+	if (min_index == 2)
+	{
+		rotate_a(stack_a);
+		swap_a(stack_a);
+	}
+	if (min_index == 3)
+	{
+		rev_rotate_a(stack_a);
+		rev_rotate_a(stack_a);
+	}
+	if (min_index == 4)
+		rev_rotate_a(stack_a);
+	push_a_to_b(stack_a, stack_b);
+	reset_index((*stack_a));
+	ft_sort_four(stack_a, stack_b);
+	push_b_to_a(stack_a, stack_b);
+}
+
