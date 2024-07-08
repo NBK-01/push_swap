@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 11:25:00 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/02 13:13:59 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 16:26:44 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 int	ft_lstsize(t_list *lst)
 {
 	unsigned int	len;
-  t_list  *temp;
+	t_list			*temp;
 
-  temp = lst;
+	temp = lst;
 	len = 0;
 	while (temp != NULL)
 	{
 		temp = temp->next;
 		len++;
 	}
-  free(temp);
+	free(temp);
 	return (len);
 }

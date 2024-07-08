@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 11:32:10 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 14:07:30 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 16:31:49 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 typedef struct s_list
 {
-	int			content;
-	int			index;
-	struct s_list		*next;
+	struct s_list	*next;
+	int				content;
+	int				index;
 }	t_list;
 
 char	*get_next_line(int fd);
@@ -91,7 +91,5 @@ void	ft_lstclear(t_list **lst, void (*del)(int));
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content, int i);
-
-
 
 #endif

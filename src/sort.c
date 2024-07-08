@@ -6,7 +6,7 @@
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 09:21:47 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 15:09:33 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 20:24:19 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,22 @@ void	ft_sort_three(t_list **stack)
 	tail = ft_lstlast(*stack);
 	if ((head->content > mid->content) && (head->content < tail->content))
 		swap_a(stack);
-	else if ((head->content > mid->content) && (mid->content > tail->content))
+	if ((head->content > mid->content) && (mid->content > tail->content))
 	{
 		swap_a(stack);
 		rev_rotate_a(stack);
 	}
-	else if ((head->content > mid->content) && (mid->content < tail->content))
+	if ((head->content > mid->content) && (mid->content < tail->content))
 		rotate_a(stack);
-	else if ((head->content < mid->content) && (head->content < tail->content))
+	if ((head->content < mid->content) && (head->content < tail->content))
 	{
 		swap_a(stack);
 		rotate_a(stack);
 	}
-	else if ((head->content < mid->content) && (head->content > tail->content))
+	if ((head->content < mid->content) && (head->content > tail->content))
 		rev_rotate_a(stack);
+	else
+		return ;
 }
 
 /* Getting the index of the minimum value node and moves applying 
@@ -51,6 +53,7 @@ void	ft_sort_four(t_list **stack_a, t_list **stack_b)
 	int	min_index;
 
 	min_index = find_min(stack_a);
+	//ft_printf("%d\n", min_index);
 	if (min_index == 1)
 		swap_a(stack_a);
 	if (min_index == 2)
@@ -92,4 +95,9 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 	push_b_to_a(stack_a, stack_b);
 }
 
-//void	ft_sort(t_list	**stack_a, t_list **stack);
+void	ft_sort_mid(t_list **stack_a, t_list **stack_b)
+{
+
+	(void)stack_b;
+	bubble_sort(stack_a);
+}

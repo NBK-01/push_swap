@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 09:34:31 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 15:13:10 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 18:51:51 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,31 @@ int	find_min(t_list	**stack)
 		temp = temp->next;
 	}
 	return (index);
+}
+
+void	del(int content)
+{
+	content -= content;
+}
+
+void	bubble_sort(t_list **stack)
+{
+	t_list	*temp;
+	int	value;
+	int	size;
+
+	temp = (*stack);
+	value = temp->content;
+	size = ft_lstsize(temp);
+	while (temp)
+	{
+		if (temp->content > temp->next->content)
+		{
+			value = temp->content;
+			temp->content = temp->next->content;
+			temp->next->content = value;
+		}
+		temp = temp->next;
+		ft_printf("%d\n", temp->content);
+	}
 }

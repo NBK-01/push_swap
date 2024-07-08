@@ -6,16 +6,16 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:23:58 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/05 10:44:29 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 16:23:02 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib.h"
-#include <stdio.h>
+
 long	ft_atoi(const char *str)
 {
 	long	result;
-	int	sign;
+	int		sign;
 
 	result = 0;
 	sign = 1;
@@ -35,6 +35,6 @@ long	ft_atoi(const char *str)
 		ft_printf("%s\n", "max/min error");
 		exit(1);
 	}
-	else 
+	else
 		return (sign * result);
 }

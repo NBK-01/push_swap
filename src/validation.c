@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 16:12:21 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 16:00:33 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/08 20:07:12 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	is_num(char *str)
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 /* Check for duplicates during validation */
@@ -36,10 +36,10 @@ int	is_dup(char **arg, int nbr, int i)
 	while (arg[i])
 	{
 		if (ft_atoi(arg[i]) == nbr)
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 /* Check if stack a is sorted using temp value */
@@ -51,8 +51,8 @@ int	is_sorted(t_list **a)
 	while (temp && temp->next)
 	{
 		if (temp->content > temp->next->content)
-			return (1);
+			return (0);
 		temp = temp->next;
 	}
-	return (0);
+	return (1);
 }
