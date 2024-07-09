@@ -97,10 +97,13 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 void	init_sort_large(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
+  t_list  *lst_cpy;
 
+  lst_cpy = ft_lstcpy(stack_a, lst_cpy);
+  //print_stack(lst_cpy);
 	size = ft_lstsize((*stack_a));
-	set_sorted_index(stack_a);
-	ft_sort_large(stack_a, stack_b, 0, size);
+	//set_sorted_index(stack_a);
+	//ft_sort_large(stack_a, stack_b, 0, size);
 }
 
 void	ft_sort_large(t_list **stack_a, t_list **stack_b, int i, int size)
