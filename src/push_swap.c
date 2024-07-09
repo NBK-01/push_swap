@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:09:18 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 20:07:46 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/09 17:01:37 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,8 @@ void	init_sort(t_list **stack_a, t_list **stack_b)
 	if (ft_lstsize((*stack_a)) == 5)
 		ft_sort_five(stack_a, stack_b);
 	if (ft_lstsize((*stack_a)) > 5)
-		ft_sort_mid(stack_a, stack_b, 0, ft_lstsize((*stack_a)));
+	{
+		init_sort_large(stack_a, stack_b);
+		//reset_index((*stack_a));
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: nkanaan <nkanaan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 15:14:08 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 18:49:16 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/09 16:52:29 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,18 @@ void	init_sort(t_list **stack_a, t_list **stack_b);
 void	reset_index(t_list *stack);
 int		find_min(t_list **stack);
 void	del(int content);
+void	set_sorted_index(t_list **stack_a);
 /* Sorting */
 void	ft_sort_three(t_list **stack);
 void	ft_sort_four(t_list **stack_a, t_list **stack_b);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
-void	ft_sort_mid(t_list **stack_a, t_list **stack_b, int bit_pos, int size);
-//void	ft_sort_mid(t_list **stack_a, t_list **stack_b);
-void	bubble_sort(t_list **stack);
+void	ft_sort_large(t_list **stack_a, t_list **stack_b, int i, int size);
+void	init_sort_large(t_list **stack_a, t_list **stack_b);
+void	bubble_sort(t_list **stack_a);
+void insert(t_list** headRef, int new_content, int new_index);
+void mergeSort(t_list** headRef);
+void split(t_list* source, t_list** front, t_list** back);
+t_list* merge(t_list* left, t_list* right);
 /*Operations*/
 void	swap(t_list **stack);
 void	swap_a(t_list **stack);

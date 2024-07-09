@@ -6,7 +6,7 @@
 /*   By: nkanaan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 09:21:47 by nkanaan           #+#    #+#             */
-/*   Updated: 2024/07/08 20:24:19 by nkanaan          ###   ########.fr       */
+/*   Updated: 2024/07/09 17:00:06 by nkanaan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,53 +93,31 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 	ft_sort_four(stack_a, stack_b);
 	push_b_to_a(stack_a, stack_b);
 }
-/*
-void	ft_sort_mid(t_list **stack_a, t_list **stack_b)
+
+void	init_sort_large(t_list **stack_a, t_list **stack_b)
 {
-	int		i;
-	int		count;
-  int   size;
+	int	size;
 
-  size = ft_lstsize(*stack_a);
-	count = 0;
-		while (count++ < size)
-		{
-			if ((*stack_a)->content >> count == 1)
-        rotate_a(stack_a);
-			else
-        push_a_to_b(stack_a, stack_b);
-		}
-		while (stack_b != NULL)
-      push_b_to_a(stack_a, stack_b);
-    if (!is_sorted(stack_a))
-        ft_sort_mid(stack_a, stack_b);
-} */
-
-void	ft_sort_mid(t_list **stack_a, t_list **stack_b, int bit_pos, int size)
-{
-	int	count;
-
-	if (bit_pos >= (sizeof(int) * 8) || is_sorted(stack_a))
-		return;
-
-	count = 0;
-	while (count < size)
-	{
-		if (((*stack_a)->content >> bit_pos) & 1)
-		{
-			rotate_a(stack_a);
-		}
-		else
-		{
-			push_a_to_b(stack_a, stack_b);
-		}
-		count++;
-	}
-
-	while (*stack_b != NULL)
-	{
-		push_b_to_a(stack_a, stack_b);
-	}
-
-	ft_sort_mid(stack_a, stack_b, bit_pos + 1, size);
+	size = ft_lstsize((*stack_a));
+	set_sorted_index(stack_a);
+	ft_sort_large(stack_a, stack_b, 0, size);
 }
+
+void	ft_sort_large(t_list **stack_a, t_list **stack_b, int i, int size)
+{
+	int	index;
+
+	if (is_sorted(stack_a))
+		return ;
+	while (index < size)
+	{
+		if (((*stack_a)->index >> i & 1) == 1)
+			rotate_a(stack_a);
+		else if (((*stack_a)->index >> i & 1) == 0)
+			push_a_to_b(stack_a, stack_b);
+	}
+	while ((*stack_b))
+		push_b_to_a(stack_a, stack_b);
+	ft_sort_large(stack_a, stack_b, i + 1, size);
+}
+
